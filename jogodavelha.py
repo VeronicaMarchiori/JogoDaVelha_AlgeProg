@@ -9,6 +9,7 @@ def printar_tabuleiro(tabuleiro):
         print()
         if i < 2:  #Se não for a última linha, imprime uma linha de separação
             print("-" * 9)
+    print('\n')
 
 #Função que verifica se teve um ganhador
 def verificar_ganhador(tabuleiro, jogador): 
@@ -60,11 +61,12 @@ def deu_velha(tabuleiro):
 def jogar():
     tabuleiro = [[" " for _ in range(3)] for _ in range(3)]  # Inicializa o jogo fazendo uma matriz com espaços em branco
     jogador_atual = "X"  #X sempre começa o jogo
-    print('Olá! Bem vindo ao jogo da velha ---- Por Veronica \nO X começa, utilize numeros para escolher as posições conforme indicado a seguir.\n ')
+    print('Olá! Bem vindo ao jogo da velha ---- Por Veronica \nO X começa, utilize numeros para escolher as posições conforme indicado a seguir:\n0: 0 | 1 | 2\n1: 0 | 1 | 2\n2: 0 | 1 | 2')
     while True:
         printar_tabuleiro(tabuleiro)
         l = int(input(f"{jogador_atual}, escolha a linha (0, 1, 2): "))
         c = int(input(f"{jogador_atual}, escolha a coluna (0, 1, 2): "))
+        print('\n')
 
         if tabuleiro[l][c] == " ":
             tabuleiro[l][c] = jogador_atual
